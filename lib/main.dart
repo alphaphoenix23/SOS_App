@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sos_app/testCode.dart';
 import 'messageScreen.dart';
 import 'homePage.dart';
+import 'Contacts.dart';
 
 void main() {
-  runApp(messageScreen());
+  runApp(contacts());
 }
 
 class MyApp extends StatelessWidget {
