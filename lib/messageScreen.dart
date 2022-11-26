@@ -9,6 +9,8 @@ class messageScreen extends StatefulWidget {
 }
 
 class _messageScreenState extends State<messageScreen> {
+  String message = '  ' + 'Your message goes here.';
+  TextEditingController inputMessage = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,6 +20,10 @@ class _messageScreenState extends State<messageScreen> {
           backgroundColor: Color(0xffA10C0C),
           leading: BackButton(
             color: Colors.black,
+            onPressed: () {
+              message = inputMessage.text;
+              Navigator.popAndPushNamed(context, '/home');
+            },
           ),
           title: Text("SOS Message"),
         ),
@@ -59,15 +65,16 @@ class _messageScreenState extends State<messageScreen> {
                       height: 200,
                       child: Expanded(
                         child: TextField(
+                          controller: inputMessage,
                           keyboardType: TextInputType.multiline,
                           maxLines: null,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            labelText: '  Your message goes here.',
+                            labelText: '  Help',
                             labelStyle: TextStyle(
                               color: Colors.white,
                             ),
-                            hintText: " Help! Reach my location ASAP",
+                            hintText: message,
                           ),
                         ),
                       ),
@@ -89,7 +96,10 @@ class _messageScreenState extends State<messageScreen> {
                             style:
                                 TextStyle(color: Colors.white, fontSize: 15.0),
                           ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            message = inputMessage.text;
+                            print(message);
+                          }),
                     ),
                   ],
                 ),

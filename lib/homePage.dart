@@ -73,6 +73,7 @@ class _homePageState extends State<homePage> {
                   ),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.pushNamed(context, '/message');
                   },
                 ),
                 ListTile(
@@ -88,6 +89,7 @@ class _homePageState extends State<homePage> {
                   ),
                   onTap: () {
                     Navigator.pop(context);
+                    Navigator.pushNamed(context, '/contacts');
                   },
                 ),
               ],

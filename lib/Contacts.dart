@@ -23,6 +23,9 @@ class _contactsState extends State<contacts> {
           backgroundColor: Color(0xffA10C0C),
           leading: BackButton(
             color: Colors.black,
+            onPressed: () {
+              Navigator.popAndPushNamed(context, '/home');
+            },
           ),
           title: Text('Contacts'),
           actions: [
