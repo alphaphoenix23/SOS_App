@@ -16,6 +16,7 @@ import 'storage.dart';
 import 'contacts.dart';
 //import './emergency.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -169,6 +170,12 @@ class _DashboardPageState extends State<DashboardPage> {
                           });
                           print(_result);
                           print('success');
+                          Fluttertoast.showToast(
+                              msg: "SOS sent",
+                              toastLength: Toast.LENGTH_SHORT,
+                              backgroundColor: Colors.red,
+                              textColor: Colors.white,
+                              fontSize: 16.0);
                           // await sender.sendSms(new SmsMessage(
                           //     "+917018565855", 'Hello flutter!'));
                           // await sender.sendSms(new SmsMessage(

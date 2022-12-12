@@ -36,6 +36,7 @@ dependencies:
   flutter_sms: ^2.3.3
   flutter_launcher_icons: ^0.9.2
   permission_handler: ^8.1.6
+  fluttertoast: ^8.1.2
 
 dev_dependencies:
   flutter_test:
