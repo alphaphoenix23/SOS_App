@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sos_app/contacts2.dart';
+import 'package:sos_app/dashboard.dart';
 import 'package:sos_app/testCode.dart';
 import 'messageScreen.dart';
 import 'homePage.dart';
-import 'Contacts.dart';
+import 'contacts.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,9 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(initialRoute: '/', routes: {
-      '/': (context) => homePage(),
-      '/home': (context) => homePage(),
-      '/contacts': (context) => contacts(),
+      '/': (context) => DashboardPage(),
+      '/home': (context) => DashboardPage(),
+      '/contacts': (context) => ContactList(), //contacts()
       '/message': (context) => messageScreen(),
       '/test': (context) => MyTestApp(),
     });
